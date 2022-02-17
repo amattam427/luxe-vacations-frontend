@@ -1,30 +1,36 @@
 import React, {useState, useEffect} from 'react';
-import LuxeList from './LuxeList';
+import LuxeItem from './LuxeItem';
 
-function LuxePage(){
-    const [vacationArr, setVacationArr] = useState([]);
+function LuxePage({vacationArr}){
     const [filterArr, setFilterArr] = useState('All')
     
-    useEffect (()=>{
-        fetch('http://localhost:4000/accommodations')
-        .then((r)=>r.json())
-        .then(setVacationArr)
-    }, [])
 
 
+    // const displayArr = vacationArr.filter((vacation)=> {
+    //     if(filterArr === 'All'){
+    //         return true
+    //     } else{
+    //         return vacation.location === displayArr;
+    //     }
+    // })
 
-    const displayArr = vacationArr.filter((vacation)=> {
-        if(filterArr === 'All'){
-            return true
-        } else{
-            return vacation.location === displayArr;
-        }
-    })
+    const displayArr = vacationArr
+        .filter((vacation)=> {
+            if(filterArr === 'All'){
+                return true
+            } else{
+                return vacation.location === displayArr;
+            }
+        })
+        .map((vacation)=>{
+            return <LuxeItem key={vacation.id} vacation={vacation}/>
+        });
+
 
 
     return (
         <div>
-            
+            <ul style={{listStyleType: 'none'}}>{displayArr}</ul>
         </div>
     )
 }
