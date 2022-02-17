@@ -11,6 +11,7 @@ function App() {
     .then((r)=>r.json())
     .then(setVacationArr)
   }, [])
+  //console.log('Hello')
 
 
   return (

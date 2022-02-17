@@ -1,37 +1,29 @@
-import React, {useState, useEffect} from 'react';
-import LuxeItem from './LuxeItem';
+import React, {useState} from 'react';
+import LuxeList from './LuxeList'
+import DropdownFilter from './DropdownFilter';
 
 function LuxePage({vacationArr}){
     const [filterArr, setFilterArr] = useState('All')
     
 
 
-    // const displayArr = vacationArr.filter((vacation)=> {
-    //     if(filterArr === 'All'){
-    //         return true
-    //     } else{
-    //         return vacation.location === displayArr;
-    //     }
-    // })
+    const displayArr = vacationArr.filter((vacation)=> {
+        if(filterArr === 'All'){
+            return true
+        } else{
+            return vacation.location === filterArr;
+        }
+    })
 
-    const displayArr = vacationArr
-        .filter((vacation)=> {
-            if(filterArr === 'All'){
-                return true
-            } else{
-                return vacation.location === displayArr;
-            }
-        })
-        .map((vacation)=>{
-            return <LuxeItem key={vacation.id} vacation={vacation}/>
-        });
 
 
 
     return (
-        <div>
-            <ul style={{listStyleType: 'none'}}>{displayArr}</ul>
-        </div>
+        <main>
+            <DropdownFilter setFilterArr={setFilterArr}/>
+            <LuxeList vacation={displayArr}/>
+            
+        </main>
     )
 }
 
