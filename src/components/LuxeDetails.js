@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from "react-router-dom";
+import LuxeReviews from './LuxeReviews';
 
 
 function LuxeDetails(){
@@ -12,10 +13,14 @@ function LuxeDetails(){
         fetch(`http://localhost:4000/accommodations/${id}`)
         .then((r)=>r.json())
         .then((data)=>{
-            setDetails(data)
             console.log(data)
+            setDetails(data)
+    
         });
     },[id])
+
+
+
     
     const imageSize={
         width:'800px',
@@ -28,7 +33,10 @@ function LuxeDetails(){
             <h3>{details.location}</h3>
             <img style={imageSize} src={details.image} alt={details.name}/>
             <p>{details.description}</p>
-
+            <h2>Reviews:</h2>
+            {details.reviews && details.reviews.map(review=>{
+                return  <LuxeReviews key={review.id} id={review.id} comment={review.comment}/>
+            })}
          
         </div>
     )
