@@ -1,7 +1,7 @@
 import React from 'react';
 import LuxeItem from './LuxeItem';
 
-function LuxeList({vacation}){
+function LuxeList({vacation, onUpdate}){
 
     return(
         <ul>
@@ -10,6 +10,7 @@ function LuxeList({vacation}){
                     <LuxeItem
                         key={vaca.id}
                         vaca={vaca}
+                        onUpdate={onUpdate}
                         />
                 )
             })}

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import LuxeList from './LuxeList'
 import DropdownFilter from './DropdownFilter';
 
-function LuxePage({vacationArr}){
+function LuxePage({vacationArr, onUpdate}){
     const [filterArr, setFilterArr] = useState('All')
     
 
@@ -21,7 +21,7 @@ function LuxePage({vacationArr}){
     return (
         <main>
             <DropdownFilter setFilterArr={setFilterArr}/>
-            <LuxeList vacation={displayArr}/>
+            <LuxeList vacation={displayArr} onUpdate={onUpdate}/>
             
         </main>
     )

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 //import {useParams} from "react-router-dom";
 
-function LuxeReviews({comment}){
+function LuxeReviews({comments}){
+
 
 
     return(
         <div>
             <ul>
-              <li>{comment}</li>
+                <li>{comments}</li>
             </ul>
         </div>
     )

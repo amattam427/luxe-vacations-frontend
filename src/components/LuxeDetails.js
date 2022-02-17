@@ -7,6 +7,8 @@ function LuxeDetails(){
     const {id} = useParams();
 
     const [details, setDetails] = useState([])
+    const [reviews, setReviews] = useState([])
+
 
 
     useEffect (()=> {
@@ -19,7 +21,15 @@ function LuxeDetails(){
         });
     },[id])
 
-
+    useEffect (()=> {
+        fetch(`http://localhost:4000/accommodations/${id}/reviews`)
+        .then((r)=>r.json())
+        .then((data)=>{
+            console.log(data)
+            setReviews(data)
+    
+        });
+    },[id])
 
     
     const imageSize={
@@ -34,9 +44,10 @@ function LuxeDetails(){
             <img style={imageSize} src={details.image} alt={details.name}/>
             <p>{details.description}</p>
             <h2>Reviews:</h2>
-            {details.reviews && details.reviews.map(review=>{
-                return  <LuxeReviews key={review.id} id={review.id} comment={review.comment}/>
-            })}
+                {reviews.map((r)=>
+                    <LuxeReviews key={r.id} id={r.id} comments={r.comment}/>
+                )}
+
          
         </div>
     )
