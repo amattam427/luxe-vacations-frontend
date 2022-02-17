@@ -14,7 +14,7 @@ function LuxeItem({vaca}){
                 <h2>{name}</h2>
                 <h3>{location}</h3>
                 <img style={imageSize} src={image} alt={name}/>
-               
+               <button>🤩{like}</button>
             
         </div>
     )
