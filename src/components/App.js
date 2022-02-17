@@ -23,10 +23,10 @@ function App() {
     <div>
       <Header/>
       <Switch>
-        <Route path='/reviews/:id' component={
+        <Route path='/details/:id' component={
           ()=><LuxeDetails/>
         }/>
-        
+
       <Route exact path='/' component={ 
         ()=><LuxePage vacationArr={vacationArr}/>
       }/>
