@@ -4,12 +4,14 @@ import LuxePage from './LuxePage';
 import Header from './Header';
 import LuxeDetails from './LuxeDetails';
 import NavBar from './NavBar';
+//import NewReviewForm from './NewReviewForm';
 
 
 import {Route, Switch} from "react-router-dom";
 
 function App() {
-  const [vacationArr, setVacationArr] = useState ([])
+  const [vacationArr, setVacationArr] = useState ([]) 
+  //const [comments, setComments] = useState([])
 
 
   useEffect (()=> {
@@ -31,11 +33,17 @@ function App() {
   }
 
 
+
+
   return (
     <div>
       <Header/>
       <NavBar/>
       <Switch>
+        {/* <Route path='/addreview' component={
+          ()=><NewReviewForm/>
+        }/> */}
+    
         <Route path='/details/:id' component={
           ()=><LuxeDetails/>
         }/>

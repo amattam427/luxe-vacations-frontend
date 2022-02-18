@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from "react-router-dom";
-import LuxeReviews from './LuxeReviews';
+import LuxeReviewsList from './LuxeReviewsList';
+
 
 
 function LuxeDetails(){
     const {id} = useParams();
 
     const [details, setDetails] = useState([])
-    const [reviews, setReviews] = useState([])
+    
 
 
 
@@ -21,15 +22,8 @@ function LuxeDetails(){
         });
     },[id])
 
-    useEffect (()=> {
-        fetch(`http://localhost:4000/accommodations/${id}/reviews`)
-        .then((r)=>r.json())
-        .then((data)=>{
-            console.log(data)
-            setReviews(data)
-    
-        });
-    },[id])
+
+
 
     
     const imageSize={
@@ -44,11 +38,7 @@ function LuxeDetails(){
             <img style={imageSize} src={details.image} alt={details.name}/>
             <p>{details.description}</p>
             <h2>Reviews:</h2>
-                {reviews.map((r)=>
-                    <LuxeReviews key={r.id} id={r.id} comments={r.comment}/>
-                )}
-
-         
+            <LuxeReviewsList detailsId={details.id}/>  
         </div>
     )
 

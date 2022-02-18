@@ -1,7 +1,16 @@
-import React, { useState, useEffect } from "react";
-//import {useParams} from "react-router-dom";
+import React from "react";
+import {useParams} from "react-router-dom";
 
-function LuxeReviews({comments}){
+function LuxeReviews({comments, onDeleteReview}){
+    const {id, comment} = comments
+  
+
+    function handleDelete(){
+        fetch(`http://localhost:4000/reviews${id}`,{
+            method: "DELETE",
+        });
+        onDeleteReview(id);
+    }
 
 
 
@@ -9,8 +18,12 @@ function LuxeReviews({comments}){
         <div>
             <ul>
                 <li>{comments}</li>
+                <button onClick={handleDelete}>Delete</button>
             </ul>
+
         </div>
+
+    
     )
 
 
