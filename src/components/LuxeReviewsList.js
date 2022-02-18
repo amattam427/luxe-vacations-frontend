@@ -33,7 +33,7 @@ function LuxeReviewList({detailsId}){
         <div>
             <NewReviewForm reviews={reviews} setReviews={setReviews} detailsId={detailsId} key={detailsId} onAddReview={handleAddReview}/>
             {reviews.map((r)=>
-            <LuxeReviews key={r.id} id={r.id} comments={r.comment} onDeleteReview={handleDeleteReview}/>
+            <LuxeReviews key={r.id} reviewsId={r.id} comments={r.comment} onDeleteReview={handleDeleteReview}/>
             )}
 
         </div>

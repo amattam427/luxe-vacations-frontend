@@ -1,15 +1,15 @@
 import React from "react";
-import {useParams} from "react-router-dom";
 
-function LuxeReviews({comments, onDeleteReview}){
-    const {id, comment} = comments
+
+function LuxeReviews({comments, reviewsId, onDeleteReview}){
+    
   
 
     function handleDelete(){
-        fetch(`http://localhost:4000/reviews${id}`,{
+        fetch(`http://localhost:4000/reviews/${reviewsId}`,{
             method: "DELETE",
         });
-        onDeleteReview(id);
+        onDeleteReview(reviewsId);
     }
 
 
