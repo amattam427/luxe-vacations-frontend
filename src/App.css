@@ -2,6 +2,9 @@
   text-align: center;
 }
 
+.body{
+  background-color: powderblue;
+}
 
 .header {
   background-color: teal;
@@ -10,8 +13,17 @@
   font-family: Georgia;
 }
 
+.resort-name {
+  color: rgb(252, 79, 48)
+}
+
+.location{
+  color: rgb(16, 122, 122)
+}
+
 .div1 {
   margin: 15px;
+  
   align-items: center;
 }
 
@@ -19,14 +31,93 @@
   align-items: center;
 }
 
+.like-button{
+  background-color: turquoise;
+  color: blue
+}
+
+.details-body{
+  background-color: powderblue;
+}
+
+.details-name{
+  margin: 15px;
+  color: rgb(252, 79, 48)
+}
+
+.details-location{
+  margin: 15px;
+  color: rgb(16, 122, 122)
+}
+
+.description{
+  margin: 15px;
+  color:darkblue;
+  font-family: sans-serif;
+
+
+}
+
+.review-input{
+  width: 50%;
+  padding: 12px 20px;
+  margin: 20px
+}
+
+.desc-about{
+  margin: 15px;
+  color:blue
+}
+
+.about-desc{
+  background-color:rgb(179, 230, 179);
+}
+
+
+.details-image{
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.review-title{
+  margin: 15px;
+  color: blue;
+}
+
+.review-list{
+  margin: 15px;
+  background-color:rgb(179, 230, 179);
+}
+
+
+
+.details-button{
+  background-color: turquoise;
+  color: blue
+}
 .dropdown {
   background-color: teal;
   color: white;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: oblique;
   min-width: 160px;
-  padding: 12px 16px
+  padding: 12px 16px;
+  font-size: 20px;
   
+}
+
+.review-form-title{
+  color:rgb(23, 162, 226)
+}
+
+.home {
+  padding: 12px 16px;
+  font-size: 20px;
+
+
 }
 
 .App-logo {

@@ -5,8 +5,8 @@ function LuxeItem({vaca, onUpdate}){
     const {id, name, location, image, like} = vaca
     
     const imageSize={
-        width:'300px',
-        height: '200px' 
+        width:'400px',
+        height: '300px' 
      }
 
     function handleUpdateLikes(){
@@ -28,14 +28,14 @@ function LuxeItem({vaca, onUpdate}){
     return (
         <div className="div1">
             
-                <h2>{name}</h2>
-                <h3>{location}</h3>
+                <h2 className="resort-name">{name}</h2>
+                <h3 className="location">{location}</h3>
             <div className="div2">
             <img className= "image" style={imageSize} src={image} alt={name}/>
             </div>
-               <button onClick={handleUpdateLikes}>🤩{like}</button>
+               <button className="like-button" onClick={handleUpdateLikes}>🤩{like}</button>
                <Link to={`details/${id}`}>
-               <button>Take Me There!</button>
+               <button className= "details-button">Take Me There!</button>
                </Link>
             
         </div>

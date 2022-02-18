@@ -24,9 +24,9 @@ function NewReviewForm({detailsId, onAddReview}){
 
     return(
         <div>
-            <h3>Add A Review</h3>
+            <h3 className="review-form-title">Add A Review</h3>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="comment" placeholder="Write a Review!" value={comment} onChange={(e)=>setComment(e.target.value)}/>
+                <input className="review-input" type="text" name="comment" placeholder="Write a Review!" value={comment} onChange={(e)=>setComment(e.target.value)}/>
                 <button type="submit">Submit</button>
             </form>
            

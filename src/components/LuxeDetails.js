@@ -27,17 +27,22 @@ function LuxeDetails(){
 
     
     const imageSize={
-        width:'800px',
+        width:'750px',
         height: '500px' 
      }
 
     return(
-        <div>
-            <h2>{details.name}</h2>
-            <h3>{details.location}</h3>
-            <img style={imageSize} src={details.image} alt={details.name}/>
-            <p>{details.description}</p>
-            <h2>Reviews:</h2>
+        <div className="details-body">
+            <h2 className="details-name">{details.name}</h2>
+            <h3 className="details-location">{details.location}</h3>
+            <div className="details-image">
+            <img  style={imageSize} src={details.image} alt={details.name}/>
+            </div>
+            <div className="about-desc">
+            <h3 className="desc-about">About:</h3>
+            <p className="description">{details.description}</p> 
+            </div>
+            <h2 className="review-title">Reviews:</h2>
             <LuxeReviewsList detailsId={details.id}/>  
         </div>
     )

@@ -30,11 +30,13 @@ function LuxeReviewList({detailsId}){
 
 
     return(
-        <div>
+        <div className="review-list">
             <NewReviewForm reviews={reviews} setReviews={setReviews} detailsId={detailsId} key={detailsId} onAddReview={handleAddReview}/>
+            <div className="reviews">
             {reviews.map((r)=>
             <LuxeReviews key={r.id} reviewsId={r.id} comments={r.comment} onDeleteReview={handleDeleteReview}/>
             )}
+            </div>
 
         </div>
     )

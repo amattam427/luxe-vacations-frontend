@@ -19,7 +19,7 @@ function LuxePage({vacationArr, onUpdate}){
 
 
     return (
-        <main >
+        <main className="body" >
             <DropdownFilter setFilterArr={setFilterArr}/>
             <LuxeList vacation={displayArr} onUpdate={onUpdate}/>
             
