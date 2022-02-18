@@ -26,11 +26,13 @@ function LuxeItem({vaca, onUpdate}){
     }
 
     return (
-        <div>
+        <div className="div1">
             
                 <h2>{name}</h2>
                 <h3>{location}</h3>
-                <img style={imageSize} src={image} alt={name}/>
+            <div className="div2">
+            <img className= "image" style={imageSize} src={image} alt={name}/>
+            </div>
                <button onClick={handleUpdateLikes}>🤩{like}</button>
                <Link to={`details/${id}`}>
                <button>Take Me There!</button>

@@ -6,7 +6,7 @@ function DropdownFilter({setFilterArr}){
     }
     return(
         <div>
-            <select name="filter" onChange={handleFilterChange}>
+            <select className= "dropdown" name="filter" onChange={handleFilterChange}>
                 <option value="All">Filter by Country</option>
                 <option value="Mexico">Mexico</option>
                 <option value="Jamaica">Jamaica</option>

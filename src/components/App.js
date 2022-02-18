@@ -40,9 +40,6 @@ function App() {
       <Header/>
       <NavBar/>
       <Switch>
-        {/* <Route path='/addreview' component={
-          ()=><NewReviewForm/>
-        }/> */}
     
         <Route path='/details/:id' component={
           ()=><LuxeDetails/>

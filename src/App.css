@@ -2,6 +2,33 @@
   text-align: center;
 }
 
+
+.header {
+  background-color: teal;
+  color: white;
+  text-align: center;
+  font-family: Georgia;
+}
+
+.div1 {
+  margin: 15px;
+  align-items: center;
+}
+
+.div2 {
+  align-items: center;
+}
+
+.dropdown {
+  background-color: teal;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: oblique;
+  min-width: 160px;
+  padding: 12px 16px
+  
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
