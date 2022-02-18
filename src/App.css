@@ -23,7 +23,7 @@
 
 .div1 {
   margin: 15px;
-  
+
   align-items: center;
 }
 
@@ -95,6 +95,7 @@
 
 
 .details-button{
+  margin-left: 245px;
   background-color: turquoise;
   color: blue
 }

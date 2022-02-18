@@ -25,6 +25,7 @@ function LuxeItem({vaca, onUpdate}){
             .then(onUpdate)
     }
 
+
     return (
         <div className="div1">
             
